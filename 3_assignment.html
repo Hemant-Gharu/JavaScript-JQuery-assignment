@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Calculate Factorial</h2>
+    <label>Enter Number</label>
+    <input type="text" id="num">
+    <button onclick="factorial()">Calculate</button>
+</body>
+<script>
+    function factorial() {
+        let number = document.querySelector("#num").value;
+
+        if (isNaN(number) || 0 > number) {
+            alert(`Pleale enter valid number`)
+            return;
+        }
+
+        let confirmMsg = confirm(`Do you really want to enter number ${number}`);
+
+        let fac = 1;
+        for (let x = 1; x <= number; x++) {
+            fac *= x;
+        }
+        alert(`Factorial = ${fac}`)
+    }
+</script>
+
+</html>

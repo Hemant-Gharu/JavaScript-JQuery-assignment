@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            width: 550px;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        img {
+            height: 100px;
+            width: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        textarea {
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body onload="load()">
+    <div class="container">
+        <div class="image-container">
+            <img src="flower.jpg" onclick="updateTextArea('Flower')">
+            <img src="nature.jpg" onclick="updateTextArea('Nature')">
+            <img src="butterfly.jpg" onclick="updateTextArea('Butterfly')">
+        </div>
+        <textarea cols="20" rows="3"></textarea>
+    </div>
+    <script>
+        const updateTextArea = (word) => {
+            let textarea = document.querySelector("textarea");
+            textarea.value = `${word}`
+        }
+        function load() {
+            let textarea = document.querySelector("textarea");
+            textarea.focus();
+        }
+    </script>
+
+</body>
+
+</html>

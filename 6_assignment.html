@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Month and Digital Clock</title>
+    <style>
+        .img-container {
+            height: 300px;
+            width: 400px;
+            border: 1px solid black;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            margin-left: 30px;
+            margin-top: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img-container"></div>
+        <div class="buttons">
+            <button onclick="showImage('nature.jpg')">Nature</button>
+            <button onclick="showImage('flower.jpg')">Flower</button>
+            <button onclick="showImage('butterfly.jpg')">Butterfly</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    const showImage = (imgSrc) => {
+        let imgContainer = document.querySelector('.img-container');
+        imgContainer.innerHTML = "";
+        let image = document.createElement("img");
+        image.src = imgSrc
+        imgContainer.appendChild(image);
+    }
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4 id="result"></h4>
+</body>
+<script>
+    function userAge() {
+        let age = prompt(`Enter Your Age:`);
+        if (isNaN(age) || 0 > age) {
+            alert(`Please enter valid age!!`);
+        } else {
+            age = parseInt(age);
+            numOfBirth = "";
+            for (let x = 1; x <= age; x++) {
+                numOfBirth += "<li>Happy Birthday!</li>"
+            }
+            document.body.innerHTML = `<ol> ${numOfBirth} </ol>`
+        }
+    }
+    userAge()
+</script>
+
+</html>

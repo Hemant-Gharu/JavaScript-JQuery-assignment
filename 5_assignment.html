@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Month and Digital Clock</title>
+    <style>
+        div{
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="month"></div>
+    <div id="digital-watch"></div>
+
+</body>
+
+<script>
+    // Month
+    let month = document.querySelector("#month");
+    const weekday = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+    let date = new Date();
+    let currentDay = date.getDay();
+    month.innerHTML = `Today is : ${weekday[currentDay]}`;
+
+    // digital Clock
+    setInterval(() => {
+        let digitalClock = document.getElementById("digital-watch");
+        let currentTime = new Date();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        let seconds = currentTime.getSeconds();
+
+        let amPm = hours <= 12 ? "AM" : "PM";
+        hours = amPm == "PM" ? hours - 12 : hours
+
+        digitalClock.innerHTML = `${hours} ${amPm}:${minutes}:${seconds}`;
+    }, 1000)
+
+</script>
+
+</html>
