@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        form {
+            height: 30vh;
+            width: 50%;
+            border: 2px solid black;
+            border-radius: 20px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-evenly
+        }
+
+        input {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <select id="flavours" onchange="flavourChoosed()">
+            <option value="Vanilla">Vanilla</option>
+            <option value="Chocholate">Chocholate</option>
+            <option value="Strawberry">Strawberry</option>
+            <option value="butterPecan">Butter Pecan</option>
+            <option value="Cookies n'Cream.">Cookies n'Cream</option>
+        </select>
+
+        <input type="text" id="showFlavour">
+    </form>
+</body>
+<script>
+    const flavourChoosed = () => {
+        let flavours = document.querySelector("#flavours").value;
+        let showFlavour = document.querySelector("#showFlavour");
+        showFlavour.value = `You Picked ${flavours}.`;
+    }
+</script>
+
+</html>
